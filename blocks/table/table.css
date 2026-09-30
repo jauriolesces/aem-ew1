@@ -1,9 +1,9 @@
 .table {
-  --table-border-color: light-dark(var(--color-gray-200), rgb(245 242 237 / 12%));
+  --table-border-color: light-dark(var(--color-gray-200), rgb(243 247 250 / 12%));
 
   width: 100%;
   overflow-x: auto;
-  border-radius: 12px;
+  border-radius: var(--radius-m);
 }
 
 .table table {
@@ -46,7 +46,7 @@
   font-size: 0.85em;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: light-dark(var(--color-ink), var(--color-parchment));
+  color: light-dark(var(--color-maastricht), var(--color-mist));
 }
 
 .table table tbody tr {
@@ -55,7 +55,7 @@
 }
 
 .table table tbody tr:hover {
-  background-color: light-dark(rgb(161 79 43 / 4%), rgb(197 160 89 / 5%));
+  background-color: light-dark(rgb(2 105 156 / 4%), rgb(80 182 242 / 5%));
 }
 
 .table table th p,
@@ -78,7 +78,7 @@
 }
 
 .table.striped tbody tr:nth-child(odd):hover {
-  background-color: light-dark(rgb(161 79 43 / 6%), rgb(197 160 89 / 8%));
+  background-color: light-dark(rgb(2 105 156 / 6%), rgb(80 182 242 / 8%));
 }
 
 /* bordered variant */

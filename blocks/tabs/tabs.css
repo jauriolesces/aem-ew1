@@ -1,4 +1,4 @@
-/* Tabs block – Heritage Elite, mobile-first */
+/* Tabs block – Frost, mobile-first */
 
 .tabs {
   color: var(--text-color);
@@ -27,7 +27,7 @@ main .section .tabs {
 .tabs .tabs-wrapper .section h2 {
   font-family: var(--font-family-serif);
   font-size: 2.5rem;
-  color: var(--color-rust);
+  color: var(--color-sea);
   margin: 0;
   text-align: center;
   letter-spacing: -0.02em;
@@ -36,7 +36,7 @@ main .section .tabs {
 .tabs .tabs-wrapper .section p {
   font-family: var(--font-family-serif);
   font-size: 1.1rem;
-  color: light-dark(var(--color-ink), var(--color-muted));
+  color: light-dark(var(--color-maastricht), var(--color-steel));
   opacity: 0.7;
   margin-top: 20px;
   text-align: center;
@@ -55,7 +55,7 @@ main .section .tabs {
   scroll-behavior: smooth;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  border-bottom: var(--border-heritage);
+  border-bottom: var(--border-structure);
 }
 
 .tabs .tabs-list::-webkit-scrollbar {
@@ -67,14 +67,14 @@ main .section .tabs {
   background: transparent;
   border: 0;
   border-bottom: 3px solid transparent;
-  color: light-dark(var(--color-ink), var(--color-muted));
+  color: light-dark(var(--color-maastricht), var(--color-steel));
   -webkit-text-fill-color: currentcolor;
   cursor: pointer;
   font-family: var(--body-font-family);
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 0.1em;
   margin: 0;
   padding: 16px 18px;
   opacity: 0.5;
@@ -84,19 +84,19 @@ main .section .tabs {
 
 .tabs .tabs-list button.is-active,
 .tabs .tabs-list button[aria-selected='true'] {
-  color: light-dark(var(--color-rust), var(--color-rust-bright));
-  -webkit-text-fill-color: light-dark(var(--color-rust), var(--color-rust-bright));
+  color: light-dark(var(--color-sea), var(--color-sky));
+  -webkit-text-fill-color: light-dark(var(--color-sea), var(--color-sky));
   opacity: 1;
-  border-bottom-color: light-dark(var(--color-rust), var(--color-rust-bright));
+  border-bottom-color: light-dark(var(--color-sea), var(--color-sky));
 }
 
 .tabs .tabs-list button:hover {
   opacity: 0.85;
-  color: light-dark(var(--color-rust), var(--color-rust-bright));
+  color: light-dark(var(--color-sea), var(--color-sky));
 }
 
 .tabs .tabs-list button:focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-accent);
   outline-offset: -2px;
 }
 
@@ -124,7 +124,7 @@ main .section .tabs {
   font-family: var(--font-family-serif);
   font-weight: 500;
   font-size: var(--heading-font-size-m);
-  color: light-dark(var(--color-ink), var(--color-parchment));
+  color: light-dark(var(--color-maastricht), var(--color-mist));
 }
 
 /* Override header-section styles that bleed into tab panel content.
@@ -144,7 +144,7 @@ main .section .tabs {
 .tabs .tab .section h2,
 .tabs .tab .section h3 {
   text-align: left;
-  color: light-dark(var(--color-ink), var(--color-parchment));
+  color: light-dark(var(--color-maastricht), var(--color-mist));
   letter-spacing: normal;
 }
 
@@ -173,10 +173,10 @@ main .section .tabs {
 
 .tabs .columns .embed {
   max-width: 100%;
-  border: var(--border-heritage);
-  border-radius: var(--border-radius-heritage);
+  border: var(--border-structure);
+  border-radius: var(--border-radius-structure);
   overflow: hidden;
-  background: light-dark(transparent, var(--color-card-dark));
+  background: light-dark(transparent, var(--color-deep));
 }
 
 /* Columns text — left aligned */
@@ -200,8 +200,8 @@ main .section .tabs {
 
 /* iOS/WebKit themed sections */
 .section.light-scheme .tabs .tabs-list > button[role='tab'] {
-  color: var(--color-ink);
-  -webkit-text-fill-color: var(--color-ink);
+  color: var(--color-maastricht);
+  -webkit-text-fill-color: var(--color-maastricht);
 }
 
 .section.dark-scheme .tabs .tabs-list > button[role='tab'] {

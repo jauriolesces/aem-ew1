@@ -40,13 +40,13 @@ function resolveImage(image, indexUrl) {
 }
 
 /**
- * Format a price string as Canadian dollars.
+ * Format a price string as US dollars.
  * @param {string} price
  * @returns {string}
  */
 function formatPrice(price) {
   const num = parseFloat(price);
-  return Number.isFinite(num) ? `CA$${num.toFixed(2)}` : price;
+  return Number.isFinite(num) ? `$${num.toFixed(2)}` : price;
 }
 
 /**

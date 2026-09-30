@@ -10,10 +10,10 @@
   width: min(13rem, calc(100vw - 1.5rem));
   padding: var(--space-m);
   overflow: visible;
-  border: var(--border-heritage);
+  border: var(--border-structure);
   border-right: 0;
   border-radius: var(--space-s) 0 0 var(--space-s);
-  background: light-dark(var(--color-parchment), var(--color-card-dark));
+  background: light-dark(var(--color-mist), var(--color-deep));
   color: var(--text-color);
   box-shadow: -0.5rem 0 1.25rem rgb(0 0 0 / 18%);
   font-family: var(--body-font-family);
@@ -45,11 +45,11 @@
   min-width: 2.75rem;
   min-height: 2.75rem;
   margin: 0;
-  border: 1px solid light-dark(var(--color-rust), var(--color-rust-bright));
+  border: 1px solid light-dark(var(--color-sea), var(--color-sky));
   border-right: 0;
   border-radius: var(--space-s) 0 0 var(--space-s);
-  background: light-dark(var(--color-rust), var(--color-rust-bright));
-  color: var(--color-light);
+  background: light-dark(var(--color-sea), var(--color-sky));
+  color: var(--color-on-brand);
   padding: 0.75rem 0.5rem;
   cursor: pointer;
   font: inherit;
@@ -133,7 +133,7 @@
 }
 
 .auth-option-button:hover {
-  border-color: light-dark(var(--color-rust), var(--color-rust-bright));
+  border-color: light-dark(var(--color-sea), var(--color-sky));
   background: light-dark(var(--color-gray-100), var(--color-gray-700));
 }
 

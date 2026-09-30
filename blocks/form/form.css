@@ -15,10 +15,10 @@ main .form-container .form-wrapper {
 main .form form {
   display: grid;
   gap: var(--space-s);
-  border: var(--border-heritage);
-  border-radius: var(--border-radius-heritage);
+  border: var(--border-structure);
+  border-radius: var(--border-radius-structure);
   padding: var(--space-l);
-  background: light-dark(var(--color-parchment), var(--color-card-dark));
+  background: light-dark(var(--color-mist), var(--color-deep));
   color: inherit;
   min-width: 0;
   max-width: 100%;
@@ -44,10 +44,10 @@ main .form form {
   scroll-margin: 1em;
   width: 100%;
   min-width: 0;
-  border: 1px solid light-dark(rgb(26 26 26 / 20%), rgb(245 242 237 / 20%));
+  border: 1px solid light-dark(rgb(0 39 62 / 20%), rgb(243 247 250 / 20%));
   border-radius: 8px;
   padding: 12px 14px;
-  background: light-dark(var(--color-light), rgb(6 13 13 / 60%));
+  background: light-dark(var(--color-light), rgb(0 23 36 / 60%));
   color: inherit;
   font-size: var(--body-font-size-s);
   transition: border-color 0.25s, box-shadow 0.25s;
@@ -68,16 +68,16 @@ main .form form {
 .form input:hover,
 .form textarea:hover,
 .form select:hover {
-  border-color: light-dark(var(--color-rust), var(--color-rust-bright));
+  border-color: light-dark(var(--color-sea), var(--color-sky));
 }
 
 .form input:focus,
 .form textarea:focus,
 .form select:focus {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
-  border-color: var(--color-gold);
-  box-shadow: 0 0 0 4px rgb(197 160 89 / 12%);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px rgb(80 182 242 / 12%);
 }
 
 .form input:disabled,
@@ -242,9 +242,9 @@ main .form form {
 }
 
 .form .button-wrapper button.button:not(.secondary) {
-  border: 1px solid light-dark(var(--color-rust), var(--color-rust-bright));
-  background: light-dark(var(--color-rust), var(--color-rust-bright));
-  color: var(--color-parchment);
+  border: 1px solid light-dark(var(--color-sea), var(--color-sky));
+  background: light-dark(var(--color-sea), var(--color-sky));
+  color: var(--color-on-brand);
 }
 
 .form .button-wrapper button.button:disabled,
@@ -254,20 +254,18 @@ main .form form {
 }
 
 .form .button-wrapper button.button:not(.secondary):hover {
-  background: var(--color-gold);
-  border-color: var(--color-gold);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px light-dark(rgb(161 79 43 / 25%), rgb(197 160 89 / 25%));
+  background: var(--color-brand-hover);
+  border-color: var(--color-brand-hover);
+  box-shadow: 0 8px 20px light-dark(rgb(2 105 156 / 25%), rgb(80 182 242 / 25%));
 }
 
 .form .button-wrapper button.button.secondary {
-  border: 1px solid light-dark(var(--color-rust), var(--color-rust-bright));
+  border: 1px solid light-dark(var(--color-sea), var(--color-sky));
   background: transparent;
-  color: light-dark(var(--color-rust), var(--color-rust-bright));
+  color: light-dark(var(--color-sea), var(--color-sky));
 }
 
 .form .button-wrapper button.button.secondary:hover {
-  border-color: var(--color-gold);
-  color: var(--color-gold);
-  transform: translateY(-2px);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
 }

@@ -19,7 +19,7 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   position: relative;
-  border-radius: 12px;
+  border-radius: var(--radius-m);
   overflow: hidden;
 }
 
@@ -38,9 +38,6 @@
   transition: transform 0.55s var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1));
 }
 
-.embed .embed-placeholder:hover picture img {
-  transform: scale(1.03);
-}
 
 .embed .embed-placeholder-play button {
   box-sizing: border-box;
@@ -63,9 +60,8 @@
 }
 
 .embed .embed-placeholder-play button:hover {
-  transform: scale(1.12);
   background: rgb(0 0 0 / 45%);
-  border-color: var(--color-gold);
+  border-color: var(--color-accent);
 }
 
 .embed .embed-placeholder-play button::before {

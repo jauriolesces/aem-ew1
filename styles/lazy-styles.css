@@ -63,14 +63,14 @@ a:any-link {
 :is(main, article.article-body) blockquote {
   margin: var(--space-2xl, 48px) 0;
   padding: var(--space-l) var(--space-xl);
-  border-left: 4px solid var(--color-gold);
-  background-color: light-dark(rgb(197 160 89 / 6%), rgb(197 160 89 / 8%));
+  border-left: 4px solid var(--color-accent);
+  background-color: light-dark(rgb(80 182 242 / 6%), rgb(80 182 242 / 8%));
   border-radius: 0 8px 8px 0;
   font-family: var(--font-family-serif);
   font-size: var(--body-font-size-xl);
   font-style: italic;
   line-height: 1.55;
-  color: light-dark(var(--color-ink), var(--color-parchment));
+  color: light-dark(var(--color-maastricht), var(--color-mist));
 }
 
 :is(main, article.article-body) blockquote p {
@@ -95,7 +95,7 @@ a:any-link {
 .dark-scheme :is(main, article.article-body) > .section.highlight,
 :root[data-theme='dark'] :is(main, article.article-body) > .section.light,
 :root[data-theme='dark'] :is(main, article.article-body) > .section.highlight {
-  box-shadow: inset 0 1px 0 rgb(197 160 89 / 10%), inset 0 -1px 0 rgb(197 160 89 / 10%);
+  box-shadow: inset 0 1px 0 rgb(80 182 242 / 10%), inset 0 -1px 0 rgb(80 182 242 / 10%);
 }
 
 /* Divider sections: slightly larger padding for visual breathing room */
@@ -143,7 +143,7 @@ header .nav-wrapper.scrolled {
 
 .dark-scheme main .teaser,
 :root[data-theme='dark'] main .teaser {
-  box-shadow: 0 0 0 1px rgb(197 160 89 / 12%), 0 8px 32px rgb(0 0 0 / 25%);
+  box-shadow: 0 0 0 1px rgb(80 182 242 / 12%), 0 8px 32px rgb(0 0 0 / 25%);
 }
 
 /* ==========================================================================
@@ -156,7 +156,6 @@ header .nav-wrapper.scrolled {
 }
 
 :is(main, article.article-body) a:hover picture img {
-  transform: scale(1.04);
   filter: brightness(1.04);
 }
 
@@ -167,7 +166,7 @@ header .nav-wrapper.scrolled {
 
 /* Focus-visible on all interactive elements: consistent brand ring */
 :is(main, article.article-body) :is(a, button, input, select, textarea, [tabindex]):focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -179,14 +178,14 @@ header .nav-wrapper.scrolled {
 .code-block > pre {
   padding-right: calc(var(--space-l) + 90px);
   background-color: light-dark(
-    color-mix(in srgb, var(--text-color, #1a1a2e) 8%, var(--light-color, #fff)),
-    var(--light-color, #1c1c2c)
+    color-mix(in srgb, var(--text-color, #00273e) 8%, var(--light-color, #fff)),
+    var(--light-color, #062f48)
   );
   border: 1px solid light-dark(
-    color-mix(in srgb, var(--text-color, #1a1a2e) 14%, transparent),
+    color-mix(in srgb, var(--text-color, #00273e) 14%, transparent),
     rgb(255 255 255 / 8%)
   );
-  color: light-dark(var(--color-ink, #1a1a2e), var(--color-parchment, #f6f1e7));
+  color: light-dark(var(--color-maastricht, #00273e), var(--color-mist, #f3f7fa));
 }
 
 .code-block > pre code {
@@ -199,10 +198,10 @@ header .nav-wrapper.scrolled {
   padding: 0.15em 0.4em;
   border-radius: 4px;
   background: light-dark(
-    color-mix(in srgb, var(--text-color, #1a1a2e) 8%, transparent),
+    color-mix(in srgb, var(--text-color, #00273e) 8%, transparent),
     rgb(255 255 255 / 10%)
   );
-  color: var(--color-rust);
+  color: var(--color-sea);
   -webkit-text-fill-color: currentcolor;
   font-size: 0.9em;
   font-weight: 600;
@@ -226,7 +225,7 @@ header .nav-wrapper.scrolled {
   border-radius: 6px;
   background: light-dark(rgb(255 255 255 / 70%), rgb(0 0 0 / 30%));
   backdrop-filter: blur(6px);
-  color: light-dark(var(--color-ink, #111), var(--color-parchment, #fff));
+  color: light-dark(var(--color-maastricht, #00273e), var(--color-mist, #fff));
   -webkit-text-fill-color: currentcolor;
   font-family: var(--body-font-family);
   font-size: 0.8125rem;

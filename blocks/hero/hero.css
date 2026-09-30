@@ -1,4 +1,4 @@
-/* Hero block – Heritage Elite, mobile-first */
+/* Hero block – Frost, mobile-first */
 
 .hero-container .hero-wrapper {
   max-width: unset;
@@ -7,7 +7,8 @@
 
 .hero {
   position: relative;
-  background-color: light-dark(var(--color-parchment), var(--color-obsidian));
+  background-color: var(--color-maastricht);
+  overflow: hidden;
 }
 
 /* Image */
@@ -21,19 +22,15 @@
   line-height: 0;
 }
 
-/* Gradient fade effect at the bottom of the hero image */
+/* Maastricht scrim keeps overlaid text legible on any photograph */
 .hero > div:first-child::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 65%;
-  background: linear-gradient(to bottom, transparent 0%, light-dark(var(--color-parchment), var(--color-obsidian)) 100%);
+  inset: 0;
+  background: linear-gradient(90deg, rgb(0 39 62 / 88%) 0%, rgb(0 39 62 / 70%) 45%, rgb(0 39 62 / 25%) 100%);
   pointer-events: none;
   z-index: 1;
 }
-
 
 /* Dual-image hero: light shown by default, dark hidden */
 .hero .hero-img-dark {
@@ -54,9 +51,9 @@
 .hero picture img {
   display: block;
   width: 100%;
+  height: 520px;
   max-height: 580px;
   object-fit: cover;
-  opacity: 0.55;
 }
 
 /* Text overlay */
@@ -70,11 +67,16 @@
 }
 
 .hero > div:last-child > div {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  place-items: center start;
   gap: var(--space-m);
-  max-width: 600px;
+  max-width: 640px;
+}
+
+/* text spans the full row; CTAs sit side by side */
+.hero > div:last-child > div > :not(.button-container) {
+  grid-column: 1 / -1;
 }
 
 /* Hide the second image row when hero block decoration hasn't run (Target offer injection) */
@@ -82,86 +84,74 @@
   display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  @keyframes hero-enter {
-    from {
-      opacity: 0;
-      transform: translateY(24px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .hero > div:last-child > div {
-    animation: hero-enter 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
-  }
-
-  .hero .hero-tagline {
-    animation: hero-enter 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
-  }
-
-  .hero h1 {
-    animation: hero-enter 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
-  }
-
-  .hero p.button-container {
-    animation: hero-enter 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
-  }
-}
-
 /* Tagline */
 .hero .hero-tagline {
-  font-family: var(--font-family-mono);
-  font-size: 0.75rem;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-xs);
   font-weight: 600;
-  color: var(--color-gold);
+  color: var(--color-sky);
   text-transform: uppercase;
-  letter-spacing: 5px;
+  letter-spacing: 0.14em;
   margin: 0;
 }
 
 /* Heading */
 .hero h1 {
   margin: 0;
-  font-family: var(--font-family-serif);
-  font-size: clamp(2rem, 8vw, 4.5rem);
-  font-weight: 500;
-  line-height: 1.05;
-  color: light-dark(var(--color-ink), var(--color-parchment));
+  font-family: var(--heading-font-family);
+  font-size: clamp(2.25rem, 8vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.08;
+  color: var(--color-white);
 }
 
 .hero h1 em {
-  font-weight: 400;
-  font-style: italic;
-  background: linear-gradient(135deg, var(--color-rust) 0%, var(--color-gold) 100%);
-  background-clip: text;
-  color: transparent;
-}
-
-.dark-scheme .hero h1 em,
-:root[data-theme='dark'] .hero h1 em {
-  background: linear-gradient(135deg, var(--color-rust-bright) 0%, var(--color-gold) 100%);
-  background-clip: text;
-  color: transparent;
+  font-style: normal;
+  color: var(--color-sky);
 }
 
 /* Body text — hidden on mobile */
 .hero p:not(.button-container, .hero-tagline) {
   display: none;
-  max-width: 550px;
+  max-width: 560px;
   margin: 0;
-  font-family: var(--font-family-serif);
   font-size: 1.15rem;
-  color: light-dark(var(--color-ink), var(--color-muted));
-  line-height: 1.7;
-  letter-spacing: 0.01em;
+  color: rgb(255 255 255 / 90%);
+  line-height: 1.6;
 }
 
 .hero p.button-container {
-  margin-top: var(--space-s);
+  margin: 0;
+}
+
+/* CTAs sit on the dark scrim in both themes */
+.hero a.button:any-link {
+  white-space: normal;
+  border-color: var(--color-sky);
+  background-color: var(--color-sky);
+  color: var(--color-maastricht);
+}
+
+.hero a.button:any-link:hover,
+.hero a.button:any-link:focus-visible {
+  border-color: var(--color-white);
+  background-color: var(--color-white);
+  color: var(--color-maastricht);
+}
+
+.hero a.button:any-link:focus-visible {
+  outline-color: var(--color-white);
+}
+
+.hero a.button.secondary:any-link {
+  border-color: var(--color-white);
+  background-color: transparent;
+  color: var(--color-white);
+}
+
+.hero a:any-link:not(.button) {
+  color: var(--color-white);
+  text-decoration-color: rgb(255 255 255 / 60%);
 }
 
 /* Icon */
@@ -177,61 +167,55 @@
   object-fit: contain;
 }
 
-/* Dark-mode image: blend into obsidian bg with soft edges */
-.dark-scheme .hero .hero-img-dark picture img,
-:root[data-theme='dark'] .hero .hero-img-dark picture img {
-  opacity: 0.3;
-  mask-image: radial-gradient(ellipse 85% 70% at 50% 35%, black 25%, transparent 100%);
-}
-
-/* Dark mode cinematic fade uses obsidian */
-.dark-scheme .hero > div:first-child::after,
-:root[data-theme='dark'] .hero > div:first-child::after {
-  background: linear-gradient(to bottom, transparent 0%, var(--color-obsidian) 100%);
-}
-
-/* Tablet: show body text */
+/* Tablet: show body text, CTAs side by side */
 @media (width >= 600px) {
+  .hero > div:last-child > div {
+    grid-template-columns: repeat(2, auto) minmax(0, 1fr);
+  }
+
   .hero p:not(.button-container, .hero-tagline) {
     display: block;
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
 }
 
 /* Desktop */
 @media (width >= 900px) {
+  .hero picture img {
+    height: 580px;
+  }
+
   .hero > div:last-child {
-    padding: 100px 5vw;
+    padding: 80px var(--content-padding-inline);
   }
 
   .hero > div:last-child > div {
-    max-width: 1000px;
-    margin: 0 25%;
+    width: 100%;
+    max-width: var(--grid-container-width);
+    margin: 0 auto;
+    padding: 0 var(--content-padding-inline);
+    box-sizing: border-box;
   }
 
   .hero h1 {
-    font-size: clamp(3.5rem, 5vw, 6rem);
-  }
-}
-
-@media (width >= 1200px) {
-  .hero > div:last-child {
-    padding: 100px 6vw;
-  }
-
-  .hero h1 {
-    font-size: clamp(4rem, 5.5vw, 6.5rem);
+    max-width: 720px;
+    font-size: clamp(3rem, 4.5vw, 4rem);
   }
 }
 
 /* No-image fallback */
+.hero.no-image > div:first-child::after {
+  content: none;
+}
+
 .hero.no-image > div:last-child {
   position: static;
   padding: 80px var(--content-padding-inline);
 }
 
 .hero.no-image > div:last-child > div {
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
   text-align: center;
   max-width: var(--grid-container-width);
   margin: 0 auto;
@@ -256,41 +240,36 @@
 
 /* Background color variants */
 .hero.rust {
-  background-color: var(--color-rust);
+  background-color: var(--color-sea);
 }
 
 .hero.rust h1,
 .hero.rust p:not(.button-container, .hero-tagline) {
-  color: var(--color-parchment);
-}
-
-/* Variant heros: reset gradient text and use solid color */
-:root .hero.rust h1 em {
-  background: none;
-  background-clip: unset;
-  color: var(--color-gold);
+  color: var(--color-white);
 }
 
 .hero.gold {
-  background-color: var(--color-gold);
+  background-color: var(--color-sky);
 }
 
 .hero.gold h1,
-.hero.gold p:not(.button-container, .hero-tagline) {
-  color: var(--color-ink);
+.hero.gold p:not(.button-container, .hero-tagline),
+.hero.gold .hero-tagline,
+.hero.gold h1 em {
+  color: var(--color-maastricht);
+}
+
+.hero.gold a.button:any-link {
+  border-color: var(--color-maastricht);
+  background-color: var(--color-maastricht);
+  color: var(--color-white);
 }
 
 .hero.ink {
-  background-color: var(--color-ink);
+  background-color: var(--color-maastricht);
 }
 
 .hero.ink h1,
 .hero.ink p:not(.button-container, .hero-tagline) {
-  color: var(--color-parchment);
-}
-
-:root .hero.ink h1 em {
-  background: none;
-  background-clip: unset;
-  color: var(--color-rust);
+  color: var(--color-white);
 }

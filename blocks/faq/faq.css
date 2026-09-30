@@ -13,7 +13,7 @@ main .faq .faq-category-heading {
   color: var(--color-brand);
   margin-bottom: var(--space-m);
   padding-bottom: var(--space-s);
-  border-bottom: var(--border-heritage);
+  border-bottom: var(--border-structure);
   letter-spacing: -0.01em;
 }
 
@@ -72,7 +72,7 @@ main .faq .faq-answer p {
 
 main .faq .faq-empty {
   font-style: italic;
-  color: var(--color-muted);
+  color: var(--color-steel);
 }
 
 @media (width >= 600px) {

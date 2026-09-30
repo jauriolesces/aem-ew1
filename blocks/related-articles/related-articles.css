@@ -93,9 +93,8 @@ main .related-articles .related-articles-card-date {
 /* Hover & focus */
 main .related-articles .related-articles-card:hover,
 main .related-articles .related-articles-card:focus-within {
-  transform: translateY(-6px);
-  border-color: light-dark(var(--color-gold), rgb(197 160 89 / 40%));
-  box-shadow: 0 20px 40px light-dark(rgb(161 79 43 / 14%), rgb(197 160 89 / 14%));
+  border-color: light-dark(var(--color-accent), rgb(80 182 242 / 40%));
+  box-shadow: 0 20px 40px light-dark(rgb(2 105 156 / 14%), rgb(80 182 242 / 14%));
 }
 
 /* Empty state */
@@ -117,7 +116,7 @@ main .related-articles .related-articles-controls {
 
 main .related-articles .related-articles-arrow {
   border: 1px solid light-dark(rgb(255 255 255 / 55%), rgb(255 255 255 / 16%));
-  background: light-dark(rgb(255 255 255 / 72%), rgb(24 27 32 / 70%));
+  background: light-dark(rgb(255 255 255 / 72%), rgb(0 23 36 / 70%));
   color: inherit;
   inline-size: 44px;
   block-size: 44px;
@@ -139,8 +138,7 @@ main .related-articles .related-articles-arrow:disabled {
 }
 
 main .related-articles .related-articles-arrow:hover:not(:disabled) {
-  border-color: var(--color-gold);
-  transform: scale(1.08);
+  border-color: var(--color-accent);
 }
 
 main .related-articles .related-articles-arrow.is-hidden {
@@ -177,7 +175,7 @@ main .related-articles .related-articles-arrow.is-hidden {
 }
 
 /* ==========================================================================
-   Bento variant – Heritage Elite grid layout
+   Bento variant – Frost grid layout
    ========================================================================== */
 
 main .related-articles.bento .related-articles-list {
@@ -191,15 +189,15 @@ main .related-articles.bento .related-articles-list {
 
 main .related-articles.bento .related-articles-card {
   flex: none;
-  border: var(--border-heritage);
-  border-radius: var(--border-radius-heritage);
-  background: light-dark(var(--color-parchment), var(--color-card-dark));
+  border: var(--border-structure);
+  border-radius: var(--border-radius-structure);
+  background: light-dark(var(--color-mist), var(--color-deep));
   transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 main .related-articles.bento .related-articles-card-link:focus-visible {
-  outline-color: var(--color-gold);
-  border-radius: var(--border-radius-heritage);
+  outline-color: var(--color-accent);
+  border-radius: var(--border-radius-structure);
 }
 
 main .related-articles.bento .related-articles-card-content {
@@ -209,12 +207,12 @@ main .related-articles.bento .related-articles-card-content {
 /* Keyword tag */
 main .related-articles.bento .related-articles-card-tag {
   display: block;
-  font-family: var(--font-family-mono);
+  font-family: var(--body-font-family);
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  color: var(--color-gold);
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
   margin: 0 0 var(--space-xs);
 }
 
@@ -225,20 +223,20 @@ main .related-articles.bento .related-articles-card h3 {
   font-size: 1.4rem;
   line-height: 1.15;
   letter-spacing: -0.5px;
-  color: light-dark(var(--color-ink), var(--color-parchment));
+  color: light-dark(var(--color-maastricht), var(--color-mist));
 }
 
 /* Description */
 main .related-articles.bento .related-articles-card-description {
   font-size: 0.95rem;
   line-height: 1.5;
-  color: light-dark(var(--color-ink), var(--color-muted));
+  color: light-dark(var(--color-maastricht), var(--color-steel));
   opacity: 0.8;
 }
 
 /* Date */
 main .related-articles.bento .related-articles-card-date {
-  font-family: var(--font-family-mono);
+  font-family: var(--body-font-family);
   color: light-dark(var(--color-gray-500), var(--color-gray-400));
   letter-spacing: 1px;
 }
@@ -246,9 +244,8 @@ main .related-articles.bento .related-articles-card-date {
 /* Hover & focus */
 main .related-articles.bento .related-articles-card:hover,
 main .related-articles.bento .related-articles-card:focus-within {
-  transform: translateY(-8px);
-  border-color: var(--color-gold);
-  box-shadow: 0 30px 60px -12px rgb(161 79 43 / 15%);
+  border-color: var(--color-accent);
+  box-shadow: 0 30px 60px -12px rgb(2 105 156 / 15%);
 }
 
 /* Featured (first) card */

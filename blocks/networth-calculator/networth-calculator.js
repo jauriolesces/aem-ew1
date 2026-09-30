@@ -32,9 +32,9 @@ function toNumber(value, fallback = 0) {
 }
 
 function money(value) {
-  return new Intl.NumberFormat('en-CA', {
+  return new Intl.NumberFormat('en-US', {
     style: 'currency',
-    currency: 'CAD',
+    currency: 'USD',
     maximumFractionDigits: 0,
   }).format(value || 0);
 }
@@ -44,7 +44,7 @@ function percent(value, digits = 1) {
 }
 
 function buildInput({
-  id, label, value, step = 1000, suffix = 'CAD', tooltip, min = 0,
+  id, label, value, step = 1000, suffix = 'USD', tooltip, min = 0,
 }) {
   const row = createTag('label', { class: 'networth-calculator-row', for: id });
   const labelEl = createTag('span', { class: 'networth-calculator-label' }, label);
@@ -205,7 +205,7 @@ function calculate(values) {
     actions.push('Reduce monthly debt burden before increasing investment risk.');
   }
   if (registeredShare < 50) {
-    actions.push('Review TFSA/RRSP/FHSA room before adding more taxable investments.');
+    actions.push('Review 401(k), IRA, and HSA contribution room before adding more taxable investments.');
   }
   if (!actions.length) {
     actions.push('Strong base: keep automating savings and review once per quarter.');
@@ -303,16 +303,16 @@ export default function decorate(block) {
     id: 'nwc-cash', label: 'Cash', value: DEFAULTS.cash, step: 500,
   });
   add({
-    id: 'nwc-tfsa', label: 'TFSA', value: DEFAULTS.tfsa, step: 1000,
+    id: 'nwc-tfsa', label: 'Roth IRA', value: DEFAULTS.tfsa, step: 1000,
   });
   add({
-    id: 'nwc-rrsp', label: 'RRSP', value: DEFAULTS.rrsp, step: 1000,
+    id: 'nwc-rrsp', label: '401(k) / Traditional IRA', value: DEFAULTS.rrsp, step: 1000,
   });
   add({
-    id: 'nwc-fhsa', label: 'FHSA', value: DEFAULTS.fhsa, step: 500,
+    id: 'nwc-fhsa', label: 'Health Savings Account (HSA)', value: DEFAULTS.fhsa, step: 500,
   });
   add({
-    id: 'nwc-non-registered', label: 'Non-registered investments', value: DEFAULTS.nonRegistered, step: 1000,
+    id: 'nwc-non-registered', label: 'Taxable brokerage investments', value: DEFAULTS.nonRegistered, step: 1000,
   });
   add({
     id: 'nwc-home-value', label: 'Primary home value', value: DEFAULTS.homeValue, step: 5000,
@@ -397,7 +397,7 @@ export default function decorate(block) {
       metric('Debt service ratio', percent(result.debtServiceRatio), 'Monthly debt payments as % of after-tax monthly income.'),
       metric('Monthly cash buffer', money(result.monthlyBuffer), 'After-tax income minus essentials and debt payments.'),
       metric('Home equity', money(result.homeEquity), result.includeHome ? 'Home value minus mortgage balance.' : 'Reference only; home excluded from net worth total.'),
-      metric('Registered share', percent(result.registeredShare), 'Share of investable assets in TFSA/RRSP/FHSA/pension accounts.'),
+      metric('Tax-advantaged share', percent(result.registeredShare), 'Share of investable assets in 401(k), IRA, HSA, and pension accounts.'),
       metric('Housing concentration', percent(result.housingConcentration), 'Portion of total assets tied to primary residence.'),
     );
 

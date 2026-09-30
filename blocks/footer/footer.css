@@ -1,8 +1,8 @@
 footer {
   width: 100%;
-  background-color: light-dark(var(--color-rust), #080d0d);
-  color: var(--color-parchment);
-  border-top: light-dark(none, var(--border-heritage));
+  background-color: light-dark(var(--color-maastricht), var(--color-abyss));
+  color: var(--color-mist);
+  border-top: light-dark(none, var(--border-structure));
   font-size: var(--body-font-size-xs);
 }
 
@@ -27,10 +27,10 @@ footer .footer .section:first-child {
 
 /* Row 2: Tagline */
 footer .footer .section:nth-child(2) p {
-  font-family: var(--font-family-serif);
-  font-weight: 400;
+  font-family: var(--heading-font-family);
+  font-weight: 500;
   font-size: var(--body-font-size-s);
-  opacity: 0.7;
+  opacity: 0.85;
   margin-top: var(--space-s);
 }
 
@@ -68,26 +68,25 @@ footer .footer .section:nth-child(3) li {
 }
 
 footer .footer a:any-link {
-  color: var(--color-parchment);
-  text-decoration-color: rgb(245 242 237 / 30%);
-  transition: color 0.25s, text-decoration-color 0.25s, opacity 0.25s;
+  color: var(--color-mist);
+  text-decoration-color: rgb(243 247 250 / 30%);
+  transition: color var(--duration-fast) linear, text-decoration-color var(--duration-fast) linear;
 }
 
 footer .footer a:any-link:hover {
-  text-decoration-color: var(--color-gold);
-  color: var(--color-gold);
+  text-decoration-color: var(--color-sky);
+  color: var(--color-sky);
 }
 
 footer .footer .section:nth-child(3) ul a {
   text-decoration: none;
   color: inherit;
   opacity: 0.7;
-  transition: opacity 0.25s, transform 0.25s;
+  transition: opacity var(--duration-fast) linear;
 }
 
 footer .footer .section:nth-child(3) ul a:hover {
   opacity: 1;
-  transform: scale(1.1);
 }
 
 footer .footer .icon {
@@ -105,7 +104,7 @@ footer .footer .icon.icon-logo {
   vertical-align: middle;
   margin-inline: 4px;
   filter: none;
-  color: var(--color-parchment);
+  color: var(--color-mist);
 }
 
 footer .footer .icon.icon-logo :is(svg, img) {

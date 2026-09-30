@@ -36,10 +36,10 @@ main .search .search-query-form input[type="search"] {
 }
 
 main .search .search-query-form input[type="search"]:focus {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
-  border-color: var(--color-gold);
-  box-shadow: 0 0 0 4px rgb(197 160 89 / 12%);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px rgb(80 182 242 / 12%);
 }
 
 main .search .search-query-form button,
@@ -110,9 +110,8 @@ main .search .search-result.is-card {
 }
 
 main .search .search-result.is-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px light-dark(rgb(161 79 43 / 14%), rgb(197 160 89 / 14%));
-  border-color: light-dark(var(--color-gold), rgb(197 160 89 / 40%));
+  box-shadow: 0 20px 40px light-dark(rgb(2 105 156 / 14%), rgb(80 182 242 / 14%));
+  border-color: light-dark(var(--color-accent), rgb(80 182 242 / 40%));
 }
 
 main .search .search-result.is-list {
@@ -121,7 +120,7 @@ main .search .search-result.is-list {
 }
 
 main .search .search-result.is-list:hover {
-  background-color: light-dark(rgb(161 79 43 / 3%), rgb(197 160 89 / 4%));
+  background-color: light-dark(rgb(2 105 156 / 3%), rgb(80 182 242 / 4%));
 }
 
 main .search .search-result-link {
@@ -192,8 +191,8 @@ main .search .search-layout {
 }
 
 main .search .search-filters {
-  border: var(--border-heritage);
-  background: light-dark(var(--color-parchment), var(--color-card-dark));
+  border: var(--border-structure);
+  background: light-dark(var(--color-mist), var(--color-deep));
   padding: var(--space-m);
   border-radius: var(--space-m);
   box-shadow: 0 4px 16px rgb(0 0 0 / 6%);
