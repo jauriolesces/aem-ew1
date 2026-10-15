@@ -1,0 +1,31 @@
+{
+  "variantName": "columns-app",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "accent-orange",
+    "density": "medium",
+    "purpose": "app-download",
+    "imagePattern": "device-mockup-right",
+    "structure": "heading + paragraph + badges | image"
+  },
+  "contentPattern": {
+    "structure": "1 row, 2 cells: [h2, paragraph, 2 linked badge images (App Store, Google Play)] | [iPhones image]",
+    "buttonCount": 2,
+    "imageCount": 3
+  },
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://www.frostbank.com/",
+        "screenshot": "migration-work/screenshot.png"
+      }
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-01T01:11:52.037Z"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "columns-app"
+  ]
+}

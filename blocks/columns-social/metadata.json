@@ -1,0 +1,31 @@
+{
+  "variantName": "columns-social",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "green",
+    "density": "compact",
+    "purpose": "social-follow",
+    "imagePattern": "icons",
+    "structure": "heading | icon links"
+  },
+  "contentPattern": {
+    "structure": "1 row, 2 cells: [h2 'Don't be a stranger'] | [paragraph of 6 icon links :facebook: :instagram: :linkedin: :tiktok: :x: :youtube:]",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://www.frostbank.com/",
+        "screenshot": "migration-work/screenshot.png"
+      }
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-01T01:11:52.037Z"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "columns-social"
+  ]
+}

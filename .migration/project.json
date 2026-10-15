@@ -1,0 +1,11 @@
+{
+  "type": "da",
+  "sites": {
+    "aem-ew1": {
+      "previewOrg": "jauriolesces",
+      "previewSite": "aem-ew1",
+      "contentHostUrl": "https://content.da.live/jauriolesces/aem-ew1/",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+    }
+  }
+}

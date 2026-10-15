@@ -1,0 +1,106 @@
+/* Hero (illustrated) – full-bleed cyan band, illustration beside centred text. Mobile-first. */
+
+/* full-bleed: the band spans the viewport and abuts the next section */
+main > .section.hero-illustrated-container {
+  padding-block: 0;
+}
+
+.hero-illustrated-container .hero-illustrated-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+/* The band stays cyan with ink text in both themes, so resolve every
+   light-dark() token (text, heading, button) to its light value here. */
+.hero-illustrated {
+  color-scheme: light;
+  background-color: var(--frost-cyan);
+  color: var(--frost-ink);
+}
+
+.hero-illustrated .hero-illustrated-media {
+  line-height: 0;
+}
+
+.hero-illustrated .hero-illustrated-media p,
+.hero-illustrated .hero-illustrated-media a {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+/* mobile: the source swaps in a 16:9 close-up crop of the illustration;
+   cropping the wide desktop asset to the same box reproduces it */
+.hero-illustrated .hero-illustrated-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.hero-illustrated .hero-illustrated-content {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 16px 0;
+  text-align: center;
+}
+
+.hero-illustrated .hero-illustrated-content h1 {
+  margin: 24px 0 0;
+  padding: 0 0 8px;
+  font-family: var(--heading-font-family);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 36px;
+  color: var(--frost-ink);
+}
+
+.hero-illustrated .hero-illustrated-content p {
+  margin: 0 0 16px;
+  padding: 24px;
+  font-family: var(--body-font-family);
+  font-size: 24px;
+  line-height: 30px;
+  color: var(--frost-ink);
+}
+
+.hero-illustrated .hero-illustrated-content p.button-container {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+main .hero-illustrated a.button:any-link {
+  width: 75%;
+  margin: 12px 0 32px;
+  padding: 16px;
+}
+
+@media (width >= 600px) {
+  .hero-illustrated > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .hero-illustrated.hero-illustrated-no-media > div {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-illustrated .hero-illustrated-media img {
+    aspect-ratio: auto;
+    object-fit: contain;
+  }
+
+  .hero-illustrated .hero-illustrated-content p {
+    margin-bottom: 8px;
+  }
+}
+
+@media (width >= 1200px) {
+  main .hero-illustrated a.button:any-link {
+    margin-top: 0;
+  }
+}

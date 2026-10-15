@@ -1,0 +1,75 @@
+/* Columns (social) – heading beside a row of icon links. Mobile-first.
+ * Values from the source (.bkgcolor-green-150 .row.header-1): 64px block padding,
+ * 32px/36px heading, 32px icons in 48px-tall links with 12px side padding, 8px gaps. */
+
+.columns-social {
+  padding-block: 64px;
+}
+
+.columns-social > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
+}
+
+.columns-social .columns-social-heading > * {
+  margin: 0;
+  font-size: var(--heading-size-xl);
+  line-height: 36px;
+}
+
+.columns-social .columns-social-links ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.columns-social .columns-social-links a:any-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 12px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.columns-social .columns-social-links a:focus-visible {
+  outline-color: currentcolor;
+}
+
+main .columns-social .columns-social-links a:any-link:hover {
+  color: var(--color-white);
+}
+
+.columns-social .columns-social-links .icon {
+  width: 32px;
+  height: 32px;
+}
+
+/* icons render as <img>: recolor ink artwork to white on hover, as on the source */
+.columns-social .columns-social-links a:hover .icon img {
+  filter: brightness(0) invert(1);
+}
+
+@media (width >= 900px) {
+  .columns-social > div {
+    flex-direction: row;
+    gap: 0;
+    text-align: start;
+  }
+
+  .columns-social > div > div {
+    flex: 0 0 50%;
+  }
+
+  .columns-social .columns-social-links ul {
+    justify-content: flex-end;
+  }
+}

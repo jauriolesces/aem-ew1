@@ -1,0 +1,31 @@
+{
+  "variantName": "columns-photo",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "medium",
+    "purpose": "photo-feature",
+    "imagePattern": "large-photo-left",
+    "structure": "image + caption | heading + paragraph + 2 CTAs"
+  },
+  "contentPattern": {
+    "structure": "1 row, 2 cells: [photo, caption paragraph with bold 'Customer Photo of the Day:' + credit] | [h2, paragraph, primary CTA (strong link), secondary CTA (em link)]",
+    "buttonCount": 2,
+    "imageCount": 1
+  },
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://www.frostbank.com/",
+        "screenshot": "migration-work/screenshot.png"
+      }
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-01T01:11:52.037Z"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "columns-photo"
+  ]
+}

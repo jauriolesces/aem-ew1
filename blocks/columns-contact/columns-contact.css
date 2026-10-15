@@ -1,0 +1,173 @@
+/* Columns (contact) – full-bleed photo with a curved panel holding heading, copy and two CTAs.
+ * Mobile-first. Values from source computed styles (migration-work/columns-contact-extracted.css). */
+
+/* Full-bleed, flush band (as on the source): drop the section's content width and gutters,
+ * and pull the block over the section's own block padding. */
+.columns-contact-container .columns-contact-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.columns-contact-container .columns-contact-wrapper:first-child {
+  margin-top: calc(-1 * var(--space-xl));
+}
+
+.columns-contact-container .columns-contact-wrapper:last-child {
+  margin-bottom: calc(-1 * var(--space-xl));
+}
+
+.columns-contact {
+  overflow: hidden;
+  color: var(--color-text);
+}
+
+.columns-contact > div {
+  position: relative;
+}
+
+/* photo strip */
+.columns-contact .columns-contact-img-col {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.columns-contact .columns-contact-img-col p {
+  margin: 0;
+}
+
+.columns-contact .columns-contact-img-col img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  object-fit: cover;
+
+  /* source crops 250px into the 710x250 photo, but never leaves the right edge empty */
+  object-position: max(-250px, 100%) 50%;
+}
+
+/* curved panel edge – the source draws it with a white PNG (top-left corner rounded,
+ * left edge slanting ~10.4deg); recreated here so it follows the theme surface color */
+.columns-contact .columns-contact-img-col::after {
+  content: "";
+  position: absolute;
+  inset: 32px -64px 0 calc(50% + 105px);
+  border-top-left-radius: 44px 80px;
+  background-color: var(--color-surface);
+  transform: skewX(-10.4deg);
+  transform-origin: top left;
+}
+
+/* heading, copy, CTAs */
+.columns-contact .columns-contact-text-col {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  padding: 32px 28px;
+  background-color: var(--color-surface);
+}
+
+.columns-contact .columns-contact-text-col :is(h1, h2, h3, h4, h5, h6) {
+  margin: 0 0 16px;
+  color: var(--color-text);
+  font-size: var(--heading-font-size-xl);
+  line-height: 36px;
+}
+
+.columns-contact .columns-contact-text-col p {
+  margin: 0 0 16px;
+  color: var(--color-text);
+  line-height: 30px;
+}
+
+.columns-contact .columns-contact-text-col p.button-container {
+  margin: 12px 0 10px;
+  line-height: normal;
+}
+
+main .columns-contact .columns-contact-text-col a.button:any-link {
+  width: 100%;
+  min-width: 0;
+  padding: 16px;
+}
+
+@media (width >= 900px) {
+  /* flow-root keeps the panel's 32px top offset inside the row */
+  .columns-contact > div {
+    display: flow-root;
+    min-height: 520px;
+  }
+
+  /* photo fills the band up to 464px past the panel start (942px minimum, as on the source);
+   * the rest of the top strip shows its mirror image, like the source's flipped copy */
+  .columns-contact .columns-contact-img-col {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: max(942px, calc(100% * 5 / 12 + 464px));
+    height: auto;
+    overflow: visible;
+  }
+
+  .columns-contact .columns-contact-img-col img {
+    object-position: 100% 50%;
+    -webkit-box-reflect: right;
+  }
+
+  .columns-contact .columns-contact-img-col::after {
+    content: none;
+  }
+
+  .columns-contact .columns-contact-text-col {
+    position: relative;
+    z-index: 1;
+    isolation: isolate;
+    box-sizing: border-box;
+    min-height: 488px;
+    margin: 32px 0 0 calc(100% * 5 / 12);
+    padding: 16px 16px 16px 168px;
+    grid-template-columns: minmax(0, 568px);
+    align-content: center;
+    background-color: transparent;
+  }
+
+  .columns-contact .columns-contact-text-col::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0 -100px 0 105px;
+    border-top-left-radius: 44px 80px;
+    background-color: var(--color-surface);
+    transform: skewX(-10.4deg);
+    transform-origin: top left;
+  }
+
+  .columns-contact .columns-contact-text-col p {
+    margin-bottom: 40px;
+  }
+
+  .columns-contact .columns-contact-text-col p.button-container {
+    margin: 12px 0 0;
+  }
+
+  .columns-contact .columns-contact-text-col p.button-container + p.button-container {
+    margin-top: 28px;
+  }
+}
+
+@media (width >= 1200px) {
+  /* CTAs side by side, 24px gutter */
+  .columns-contact .columns-contact-text-col {
+    grid-template-columns: repeat(2, minmax(0, 272px));
+    column-gap: 24px;
+  }
+
+  .columns-contact .columns-contact-text-col > :not(.button-container) {
+    grid-column: 1 / -1;
+  }
+
+  .columns-contact .columns-contact-text-col p.button-container,
+  .columns-contact .columns-contact-text-col p.button-container + p.button-container {
+    margin: 0;
+  }
+}

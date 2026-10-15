@@ -1,0 +1,31 @@
+{
+  "variantName": "hero-illustrated",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "accent-blue",
+    "density": "minimal",
+    "purpose": "promo-hero",
+    "imagePattern": "illustration-side",
+    "structure": "image + heading + paragraph + CTA"
+  },
+  "contentPattern": {
+    "structure": "1 column, 1 row: illustration image (linked), h1 '24/7 Human Support. No chatbots or phone trees.', paragraph, CTA link",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://www.frostbank.com/",
+        "screenshot": "migration-work/screenshot.png"
+      }
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-01T01:11:52.037Z"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "hero-illustrated"
+  ]
+}

@@ -1,0 +1,98 @@
+/* Cards (feature) – borderless, centered value-prop grid. Mobile-first.
+ * Values from source computed styles (frostbank.com home "value props" row):
+ * 24px column gutter, 28px row spacing, square illustration on an absolute-white tile,
+ * 19px/19px heading (+1px tracking, 8px below), 16px/22px centered copy. */
+
+.cards-feature > ul {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 28px var(--space-l);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* each card spans 3 shared rows (image | heading | copy) so copy lines up across a row */
+.cards-feature > ul > li {
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+  align-content: start;
+  text-align: center;
+}
+
+.cards-feature .cards-feature-image {
+  display: flex;
+  justify-content: center;
+  line-height: 0;
+}
+
+.cards-feature .cards-feature-image p {
+  margin: 0;
+}
+
+.cards-feature .cards-feature-image picture {
+  display: contents;
+}
+
+/* line-art is dark strokes on transparent: the source's absolute-white tile keeps it legible in dark mode */
+.cards-feature .cards-feature-image img {
+  display: block;
+  width: 50%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  background-color: var(--color-white);
+}
+
+.cards-feature .cards-feature-body {
+  display: contents;
+}
+
+/* more content than heading + copy: keep it stacked in the last row */
+.cards-feature .cards-feature-body:has(> :nth-child(3)) {
+  display: block;
+  grid-row: span 2;
+}
+
+.cards-feature .cards-feature-body h3 {
+  margin: 0;
+  padding-bottom: var(--space-s);
+  font-size: var(--heading-font-size-m);
+  line-height: 1;
+  letter-spacing: 1px;
+  color: var(--color-text);
+}
+
+/* source computes "normal" on 16px Recife, which renders a 22px line box (3 lines = 66px);
+ * keep it explicit so the fallback serif does not collapse to ~18px */
+.cards-feature .cards-feature-body p {
+  margin: 0;
+  font-size: var(--body-font-size-m);
+  line-height: 22px;
+  color: var(--color-text);
+}
+
+@media (width >= 600px) {
+  .cards-feature > ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cards-feature .cards-feature-image img {
+    width: 100%;
+  }
+}
+
+@media (width >= 900px) {
+  .cards-feature > ul {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* source section spacing: 48px above / 64px below the row on desktop (section adds 32px each) */
+@media (width >= 900px) {
+  .cards-feature {
+    padding-block: 16px 32px;
+  }
+}

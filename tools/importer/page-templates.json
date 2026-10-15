@@ -1,0 +1,237 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "home",
+      "urls": [
+        "https://www.frostbank.com/"
+      ],
+      "representativeUrl": "https://www.frostbank.com/",
+      "description": "Frost Bank homepage: illustrated hero, story video, feature cards, fraud banner, product tabs, community cards, photo of the day, awards carousel, social, contact and app download bands",
+      "urlPattern": "/",
+      "blocks": [
+        {
+          "name": "hero-illustrated",
+          "instances": [
+            "div.hero-wrapper > div.hero-grid"
+          ]
+        },
+        {
+          "name": "columns-video",
+          "instances": [
+            "article.article > div.bkgcolor-white-1ee:has(video) div.section > div.row"
+          ]
+        },
+        {
+          "name": "cards-feature",
+          "instances": [
+            "article.article > div.wrapping-container:not([class*='bkgcolor']) div.section > div.row > div.col-12 > div.row",
+            "article.article > div.wrapping-container:nth-of-type(3) div.section > div.row > div.col-12 > div.row"
+          ]
+        },
+        {
+          "name": "teaser-banner",
+          "instances": [
+            "article.article > div.bkgcolor-white-1ee div.section > div.banner"
+          ]
+        },
+        {
+          "name": "columns-products",
+          "instances": [
+            ".bkgcolor-purple-88b .tab-pane > div.row"
+          ]
+        },
+        {
+          "name": "cards-community",
+          "instances": [
+            "#promo-tile > div.d-none.d-md-block > div.row"
+          ]
+        },
+        {
+          "name": "columns-photo",
+          "instances": [
+            "article.article > div.bkgcolor-white-fff div.section > div.row"
+          ]
+        },
+        {
+          "name": "carousel-awards",
+          "instances": [
+            "article.article > div.bkgcolor-white-1ee div.section > div.swiper-container"
+          ]
+        },
+        {
+          "name": "columns-social",
+          "instances": [
+            ".bkgcolor-green-150 div.section > div.row.header-1"
+          ]
+        },
+        {
+          "name": "columns-contact",
+          "instances": [
+            "article.article > div.px-lg-0.overflow-hidden:not(.no-bumpers) div.row.overflow-hidden"
+          ]
+        },
+        {
+          "name": "columns-app",
+          "instances": [
+            ".no-bumpers div.d-none.d-md-block > div.row"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "hero",
+          "selector": [
+            "article.article > div.hero-wrapper",
+            "div.hero-wrapper"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-illustrated"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "customer-stories",
+          "selector": [
+            "article.article > div.bkgcolor-white-1ee:has(video)",
+            "article.article > div.bkgcolor-white-1ee:nth-of-type(2)"
+          ],
+          "style": "grey",
+          "blocks": [
+            "columns-video"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "benefits",
+          "selector": [
+            "article.article > div.wrapping-container:not([class*='bkgcolor'])",
+            "article.article > div.wrapping-container:nth-of-type(3)"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-feature"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "fraud-banner",
+          "selector": [
+            "article.article > div.bkgcolor-white-1ee:has(.banner)",
+            "article.article > div.bkgcolor-white-1ee:nth-of-type(4)"
+          ],
+          "style": "grey",
+          "blocks": [
+            "teaser-banner"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5",
+          "name": "products",
+          "selector": [
+            "article.article > div.bkgcolor-purple-88b",
+            ".bkgcolor-purple-88b"
+          ],
+          "style": "purple",
+          "blocks": [
+            "columns-products"
+          ],
+          "defaultContent": [
+            ".bkgcolor-purple-88b div.section > div.header-1",
+            ".bkgcolor-purple-88b div.section > div.text-center.pb-24:not(.header-1)"
+          ]
+        },
+        {
+          "id": "section-6",
+          "name": "community",
+          "selector": [
+            "article.article > div.bkgcolor-white-1ee:has(#community)",
+            "article.article > div.bkgcolor-white-1ee:nth-of-type(6)"
+          ],
+          "style": "grey",
+          "blocks": [
+            "cards-community"
+          ],
+          "defaultContent": [
+            "#community > div.header-1",
+            "#community > div.text-center:not(.header-1)"
+          ]
+        },
+        {
+          "id": "section-7",
+          "name": "photo-of-the-day",
+          "selector": [
+            "article.article > div.bkgcolor-white-fff",
+            ".bkgcolor-white-fff"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-photo"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-8",
+          "name": "awards",
+          "selector": [
+            "article.article > div.bkgcolor-white-1ee:has(div.section > div.swiper-container)",
+            "article.article > div.bkgcolor-white-1ee:nth-of-type(8)"
+          ],
+          "style": "grey",
+          "blocks": [
+            "carousel-awards"
+          ],
+          "defaultContent": [
+            "article.article > div.bkgcolor-white-1ee div.section > h1"
+          ]
+        },
+        {
+          "id": "section-9",
+          "name": "social",
+          "selector": [
+            "article.article > div.bkgcolor-green-150",
+            ".bkgcolor-green-150"
+          ],
+          "style": "green",
+          "blocks": [
+            "columns-social"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-10",
+          "name": "contact",
+          "selector": [
+            "article.article > div.px-lg-0.overflow-hidden:not(.no-bumpers)"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-contact"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-11",
+          "name": "app-download",
+          "selector": [
+            "article.article > div.px-lg-0.overflow-hidden.no-bumpers",
+            ".no-bumpers"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-app"
+          ],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}

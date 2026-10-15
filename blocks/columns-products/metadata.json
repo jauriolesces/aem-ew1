@@ -1,0 +1,31 @@
+{
+  "variantName": "columns-products",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "white-on-purple",
+    "density": "medium",
+    "purpose": "product-links",
+    "imagePattern": "icons-plus-promo-image",
+    "structure": "icon links list | heading + paragraph + image"
+  },
+  "contentPattern": {
+    "structure": "1 row, 2 cells: [list of 6 items, each icon image + linked label] | [h3 promo heading, paragraph, image, whole-card link]",
+    "buttonCount": 0,
+    "imageCount": 8
+  },
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://www.frostbank.com/",
+        "screenshot": "migration-work/screenshot.png"
+      }
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-01T01:11:52.037Z"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "columns-products"
+  ]
+}

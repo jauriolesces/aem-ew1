@@ -1,0 +1,39 @@
+/*
+ * Brand tokens extracted from https://www.frostbank.com/ (migration-work/brand.json).
+ * Source fonts (Valizas, Recife, Spezia Extended) are licensed, self-hosted faces with no
+ * Typekit/Google Fonts source, so they are referenced by name with project/system fallbacks.
+ */
+:root {
+  /* typography */
+  --heading-font-family: valizas, figtree, figtree-fallback, "Helvetica Neue", arial, sans-serif;
+  --body-font-family: recife, georgia, serif;
+  --button-font-family: "Spezia Extended", figtree, figtree-fallback, "Helvetica Neue", arial, sans-serif;
+
+  /* colors (light theme values match the source) */
+  --frost-ink: #1c1c1c;
+  --frost-cyan: #00b7d5;
+  --frost-teal: #008099;
+  --frost-cream: #f3f1ee;
+  --frost-sand: #f4f1ee;
+  --frost-purple: #8a488b;
+  --frost-green: #77b150;
+  --frost-orange: #f26f48;
+  --frost-line: #e0e0e0;
+  --background-color: #fff;
+  --text-color: var(--frost-ink);
+  --link-color: var(--frost-ink);
+  --link-hover-color: var(--frost-teal);
+
+  /* spacing */
+  --section-padding: 48px;
+  --content-max-width: 1320px;
+  --nav-height: 90px;
+
+  /* heading sizes (constant across breakpoints on the source) */
+  --heading-size-xxl: 32px;
+  --heading-size-xl: 32px;
+  --heading-size-l: 24px;
+  --heading-size-m: 19px;
+  --heading-size-s: 18px;
+  --heading-size-xs: 16px;
+}

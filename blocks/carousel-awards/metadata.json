@@ -1,0 +1,31 @@
+{
+  "variantName": "carousel-awards",
+  "baseBlock": "carousel",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "grey",
+    "density": "medium",
+    "purpose": "awards",
+    "imagePattern": "image-left",
+    "structure": "image + heading + text"
+  },
+  "contentPattern": {
+    "structure": "4 rows, 2 cells: [award image] | [h3 heading, 1-2 paragraphs incl. superscripts and jdpower.com link]",
+    "buttonCount": 0,
+    "imageCount": 4
+  },
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://www.frostbank.com/",
+        "screenshot": "migration-work/screenshot.png"
+      }
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-01T01:11:52.037Z"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "carousel-awards"
+  ]
+}

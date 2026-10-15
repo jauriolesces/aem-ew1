@@ -1,0 +1,118 @@
+/* Columns (photo) – captioned photo (8/12) beside heading, copy and stacked CTAs (4/12).
+ * Mobile-first. Values from source computed styles (migration-work/columns-photo-extracted.css). */
+
+/* Source band is 40px above/below on mobile and 80px from tablet up; top up the
+ * section's own padding (--space-xl) so the block sits at the same offset. */
+.columns-photo {
+  padding-block: max(0px, calc(40px - var(--space-xl)));
+}
+
+.columns-photo > div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* photo + caption strip */
+.columns-photo .columns-photo-figure {
+  margin: 0;
+}
+
+.columns-photo .columns-photo-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-s) var(--radius-s) 0 0;
+
+  /* source photo renders 4:3 (709x532); overrides the global 16:9 CLS placeholder */
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.columns-photo .columns-photo-figure figcaption {
+  padding: var(--space-m);
+  border-radius: 0 0 var(--radius-s) var(--radius-s);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--button-font-family);
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+  line-height: normal;
+}
+
+.columns-photo figcaption p {
+  margin: 0;
+}
+
+.columns-photo .columns-photo-figure figcaption strong {
+  display: block;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+/* heading, copy, CTAs – flex column (as on the source) so margins add up instead of collapsing */
+.columns-photo .columns-photo-text-col {
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--space-xl);
+}
+
+.columns-photo .columns-photo-text-col :is(h1, h2, h3, h4, h5, h6) {
+  margin: 0 0 var(--space-m);
+}
+
+.columns-photo .columns-photo-text-col p {
+  margin: 0 0 var(--space-m);
+}
+
+.columns-photo .columns-photo-text-col p.button-container {
+  margin: 12px 0 10px;
+}
+
+.columns-photo .columns-photo-text-col a.button:any-link {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  padding: var(--space-m);
+}
+
+@media (width >= 900px) {
+  .columns-photo {
+    padding-block: max(0px, calc(80px - var(--space-xl)));
+  }
+
+  /* 8/4 split with the source's 24px gutter; both columns vertically centred */
+  .columns-photo > div {
+    display: grid;
+    grid-template-columns: calc((100% + 24px) * 2 / 3 - 24px) minmax(0, 1fr);
+    column-gap: 24px;
+    align-items: center;
+  }
+
+  .columns-photo .columns-photo-img-col,
+  .columns-photo .columns-photo-text-col {
+    min-width: 0;
+  }
+
+  .columns-photo .columns-photo-text-col {
+    padding-top: 0;
+  }
+
+  .columns-photo .columns-photo-text-col p.button-container {
+    margin-bottom: 0;
+  }
+
+  .columns-photo .columns-photo-text-col p.button-container + p.button-container {
+    margin-top: var(--space-m);
+  }
+}
+
+@media (width >= 1200px) {
+  /* source adds 64px start padding (52px beyond the 12px gutter) to the text column */
+  .columns-photo .columns-photo-text-col {
+    padding-inline-start: calc(var(--space-3xl) - 12px);
+  }
+
+  .columns-photo .columns-photo-text-col p:not(.button-container) + p.button-container {
+    margin-top: 0;
+  }
+}

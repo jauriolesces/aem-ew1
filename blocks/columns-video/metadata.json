@@ -1,0 +1,31 @@
+{
+  "variantName": "columns-video",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "grey",
+    "density": "medium",
+    "purpose": "video-stories",
+    "imagePattern": "video-gallery",
+    "structure": "heading + paragraph + CTA | video + thumbnails"
+  },
+  "contentPattern": {
+    "structure": "1 row, 2 cells: [h2, paragraph, CTA link] | [poster image + link to video /dam/Videos/fraud-stories.mp4, then 3 thumbnail images each linked to its video]",
+    "buttonCount": 1,
+    "imageCount": 4
+  },
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://www.frostbank.com/",
+        "screenshot": "migration-work/screenshot.png"
+      }
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-01T01:11:52.037Z"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "columns-video"
+  ]
+}

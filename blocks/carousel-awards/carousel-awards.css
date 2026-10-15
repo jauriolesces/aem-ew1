@@ -1,0 +1,212 @@
+/* Carousel (awards) - image + text slides, arrows and dots below. Mobile-first.
+ * Values from source computed styles (migration-work/carousel-awards-extracted.css). */
+
+.carousel-awards {
+  --carousel-awards-control-color: var(--color-text-muted);
+  --carousel-awards-dot-color: color-mix(in srgb, var(--color-text) 8%, transparent);
+  --carousel-awards-dot-active-color: color-mix(in srgb, var(--color-text) 65%, transparent);
+  --carousel-awards-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M26.5303 20.5303C26.8232 20.2374 26.8232 19.7626 26.5303 19.4697L21.7574 14.6967C21.4645 14.4038 20.9896 14.4038 20.6967 14.6967C20.4038 14.9896 20.4038 15.4645 20.6967 15.7574L24.9393 20L20.6967 24.2426C20.4038 24.5355 20.4038 25.0104 20.6967 25.3033C20.9896 25.5962 21.4645 25.5962 21.7574 25.3033L26.5303 20.5303ZM13 20.75L26 20.75L26 19.25L13 19.25L13 20.75Z'/%3E%3C/svg%3E");
+
+  color: var(--color-text);
+}
+
+.carousel-awards .carousel-awards-slides-container {
+  position: relative;
+}
+
+.carousel-awards .carousel-awards-slides,
+.carousel-awards .carousel-awards-slide-indicators {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.carousel-awards .carousel-awards-slides {
+  display: flex;
+  overflow: scroll clip;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.carousel-awards .carousel-awards-slides::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-awards .carousel-awards-slide {
+  display: flex;
+  flex: 0 0 100%;
+  flex-direction: column;
+  gap: var(--space-l);
+  width: 100%;
+  scroll-snap-align: start;
+}
+
+/* image cell */
+.carousel-awards .carousel-awards-slide-image {
+  line-height: 0;
+}
+
+.carousel-awards .carousel-awards-slide-image p {
+  margin: 0;
+}
+
+.carousel-awards .carousel-awards-slide-image picture {
+  display: block;
+}
+
+.carousel-awards .carousel-awards-slide-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* text cell */
+.carousel-awards .carousel-awards-slide-content > :first-child {
+  margin-top: 0;
+}
+
+.carousel-awards .carousel-awards-slide-content :is(h2, h3, h4) {
+  margin: 0 0 var(--space-s);
+  color: var(--color-text);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-size-l);
+  font-weight: 700;
+  line-height: 36px;
+}
+
+.carousel-awards .carousel-awards-slide-content p {
+  margin: 0 0 var(--space-m);
+  color: var(--color-text);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: 24px;
+}
+
+.carousel-awards .carousel-awards-slide-content sup {
+  font-size: 12px;
+  line-height: 0;
+}
+
+.carousel-awards .carousel-awards-slide-content a:any-link {
+  color: var(--color-link);
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+.carousel-awards .carousel-awards-slide-content a:any-link:hover {
+  color: var(--color-link-hover);
+}
+
+/* controls: prev arrow, dots, next arrow */
+.carousel-awards .carousel-awards-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: var(--space-l);
+}
+
+.carousel-awards .carousel-awards-slide-indicators {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  line-height: 0;
+}
+
+.carousel-awards .carousel-awards-slide-indicator button {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-color: var(--carousel-awards-dot-color);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) linear;
+}
+
+.carousel-awards .carousel-awards-slide-indicator button:disabled,
+.carousel-awards .carousel-awards-slide-indicator button:hover,
+.carousel-awards .carousel-awards-slide-indicator button:focus-visible {
+  background-color: var(--carousel-awards-dot-active-color);
+}
+
+.carousel-awards .carousel-awards-slide-indicator button:disabled {
+  cursor: default;
+}
+
+.carousel-awards :is(.carousel-awards-prev, .carousel-awards-next) {
+  position: relative;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid currentcolor;
+  border-radius: 50%;
+  background: none;
+  color: var(--carousel-awards-control-color);
+  cursor: pointer;
+  transition: color var(--duration-fast) linear;
+}
+
+.carousel-awards :is(.carousel-awards-prev, .carousel-awards-next):hover,
+.carousel-awards :is(.carousel-awards-prev, .carousel-awards-next):focus-visible {
+  color: var(--color-accent);
+}
+
+/* source: first/last arrow is aria-disabled and faded to 0.6 opacity */
+.carousel-awards :is(.carousel-awards-prev, .carousel-awards-next)[aria-disabled="true"] {
+  color: var(--carousel-awards-control-color);
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* arrow glyph (source Right-Active.svg path), tinted via currentcolor */
+.carousel-awards :is(.carousel-awards-prev, .carousel-awards-next)::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: currentcolor;
+  mask: var(--carousel-awards-arrow) center / 40px 40px no-repeat;
+}
+
+.carousel-awards .carousel-awards-prev::after {
+  transform: scaleX(-1);
+}
+
+@media (width >= 900px) {
+  .carousel-awards .carousel-awards-slide {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 80px;
+  }
+
+  .carousel-awards .carousel-awards-slide > div {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-awards .carousel-awards-slides {
+    scroll-behavior: auto;
+  }
+
+  .carousel-awards .carousel-awards-slide-indicator button,
+  .carousel-awards :is(.carousel-awards-prev, .carousel-awards-next) {
+    transition: none;
+  }
+}
+
+/* source: 32px between the section heading and the slider on desktop */
+@media (width >= 900px) {
+  .carousel-awards {
+    margin-top: 32px;
+  }
+}

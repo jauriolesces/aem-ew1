@@ -1,0 +1,183 @@
+/* Columns (app) – full-bleed orange app-download band: copy + store badges beside a device image.
+ * Mobile-first. Values from source computed styles (migration-work/columns-app-extracted.css).
+ * The orange band (and its ink text) is part of the block design, so it is theme-independent. */
+
+/* Section: flush band (no section padding), positioning/size container for the decorative curve */
+:is(main, article.article-body) > .section.columns-app-container {
+  position: relative;
+  padding-block: 0;
+  overflow: hidden;
+  isolation: isolate;
+  container-type: inline-size;
+}
+
+.columns-app-container .columns-app-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.columns-app {
+  color: var(--frost-ink);
+}
+
+.columns-app > div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* copy box */
+.columns-app .columns-app-text-col {
+  padding: 48px 16px;
+  background-color: var(--frost-orange);
+  color: var(--frost-ink);
+}
+
+.columns-app .columns-app-text-col h2 {
+  margin: 0 0 16px;
+  font-family: var(--heading-font-family);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 36px;
+  color: var(--frost-ink);
+}
+
+.columns-app .columns-app-text-col p {
+  margin: 0 0 16px;
+  font-size: 18px;
+  line-height: 30px;
+  color: var(--frost-ink);
+}
+
+.columns-app .columns-app-text-col > :last-child {
+  margin-bottom: 0;
+}
+
+/* store badges: two equal badges in a row, 400px max (200px each, 258:87) */
+.columns-app .columns-app-badges {
+  display: flex;
+  max-width: 400px;
+  margin: 0;
+}
+
+.columns-app .columns-app-badges a {
+  display: block;
+  flex: 1 1 0;
+  min-width: 0;
+  line-height: 0;
+}
+
+.columns-app .columns-app-badges img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto 258 / 87;
+  object-fit: fill;
+}
+
+/* phones image */
+.columns-app .columns-app-img-col {
+  line-height: 0;
+}
+
+.columns-app .columns-app-img-col p,
+.columns-app .columns-app-img-col picture {
+  display: block;
+  margin: 0;
+}
+
+.columns-app .columns-app-img-col img {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-inline: auto;
+  aspect-ratio: auto 1280 / 890;
+  object-fit: fill;
+}
+
+@media (width >= 900px) {
+  .columns-app > div {
+    flex-direction: row;
+    align-items: center;
+    min-height: 438px;
+  }
+
+  .columns-app > div > div {
+    box-sizing: border-box;
+    flex: 0 0 50%;
+    min-width: 0;
+  }
+
+  /* left half is orange edge to edge; copy (max 550px) hugs its right edge */
+  .columns-app .columns-app-text-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: stretch;
+    padding: 32px;
+    padding-inline-start: max(32px, calc(50% - 582px));
+  }
+
+  .columns-app .columns-app-text-col p {
+    font-size: 16px;
+  }
+
+  .columns-app .columns-app-badges {
+    margin-inline-start: -7px;
+  }
+
+  .columns-app .columns-app-img-col {
+    padding: 0 12px;
+  }
+
+  .columns-app .columns-app-img-col img {
+    width: auto;
+    max-width: 100%;
+    max-height: 437px;
+    margin-inline: 0;
+  }
+}
+
+/* Decorative curve: the lone decorative image authored before the block (orange-curve.svg).
+ * Mobile: sits under the phones image, its top meeting the bottom of the orange copy box. */
+.columns-app-container > .default-content-wrapper:first-child:has(> p:only-child > picture:only-child) {
+  position: absolute;
+  z-index: -1;
+
+  /* section bottom minus the phones image height (min(100%, 400px) at 1280:890) minus 1px overlap */
+  top: calc(100% - min(100cqi, 400px) * 890 / 1280 - 1px);
+  right: calc(50% + 40px);
+  width: auto;
+  max-width: none;
+  height: min(280px, 7cqi + 217px);
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  pointer-events: none;
+}
+
+.columns-app-container > .default-content-wrapper:first-child:has(> p:only-child > picture:only-child) p,
+.columns-app-container > .default-content-wrapper:first-child:has(> p:only-child > picture:only-child) picture {
+  display: block;
+  height: 100%;
+  margin: 0;
+}
+
+.columns-app-container > .default-content-wrapper:first-child:has(> p:only-child > picture:only-child) img {
+  display: block;
+  width: auto;
+  max-width: none;
+  height: 100%;
+  aspect-ratio: auto 859 / 438;
+  object-fit: fill;
+}
+
+@media (width >= 900px) {
+  /* curve: full band height at the top, slanted edge reaching 196px past the centre */
+  .columns-app-container > .default-content-wrapper:first-child:has(> p:only-child > picture:only-child) {
+    top: 0;
+    bottom: 0;
+    right: calc(50% - 196px);
+    height: auto;
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "variantName": "cards-feature",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "airy",
+    "purpose": "value-props",
+    "imagePattern": "illustration-top",
+    "structure": "image + heading + text"
+  },
+  "contentPattern": {
+    "structure": "4 rows, 2 cells: [illustration image] | [h3 heading, paragraph]",
+    "buttonCount": 0,
+    "imageCount": 4
+  },
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://www.frostbank.com/",
+        "screenshot": "migration-work/screenshot.png"
+      }
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-01T01:11:52.037Z"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "cards-feature"
+  ]
+}

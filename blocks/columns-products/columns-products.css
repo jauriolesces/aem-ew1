@@ -1,0 +1,162 @@
+/*
+ * Columns (products) – 2-column grid of icon + label link tiles beside a
+ * whole-card promo link. Values from the source computed styles
+ * (migration-work/columns-products-extracted.css). Mobile-first.
+ * Tiles and promo stay white with ink text in both themes (they sit on the
+ * purple band), so fixed brand tokens are used instead of light-dark ones.
+ */
+
+.columns-products > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+}
+
+.columns-products > div > div {
+  min-width: 0;
+}
+
+/* tiles */
+.columns-products .columns-products-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-m);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.columns-products .columns-products-list > li {
+  display: flex;
+}
+
+/* specificity beats `main > .section.purple a:any-link:not(.button)` */
+.columns-products.block .columns-products-list a.columns-products-tile:any-link {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: var(--space-xl) 20px;
+  border: 1px solid var(--frost-line);
+  border-radius: var(--radius-s);
+  background-color: var(--color-white);
+  color: var(--frost-ink);
+  font-size: var(--body-font-size-m);
+  line-height: 24px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.columns-products.block .columns-products-list a.columns-products-tile:any-link:hover,
+.columns-products.block .columns-products-list a.columns-products-tile:any-link:focus-visible {
+  outline: 4px solid var(--color-dark);
+  color: #800080;
+}
+
+.columns-products .columns-products-tile-icon {
+  display: block;
+  line-height: 0;
+}
+
+.columns-products .columns-products-tile-icon img,
+.columns-products .columns-products-tile-icon .icon {
+  display: block;
+  width: auto;
+  height: 55px;
+  aspect-ratio: auto 1 / 1;
+  object-fit: contain;
+}
+
+.columns-products .columns-products-tile-label {
+  display: block;
+  font-family: var(--button-font-family);
+  font-weight: 600;
+}
+
+/* promo card */
+.columns-products .columns-products-promo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: var(--space-xl) var(--space-m) var(--space-m);
+  border-radius: 3px;
+  background-color: var(--color-white);
+  color: var(--frost-ink);
+  text-align: center;
+}
+
+/* specificity beats `main > .section.purple :is(h1, ..., p)` */
+.columns-products.block .columns-products-promo :is(h3, p) {
+  color: var(--frost-ink);
+}
+
+.columns-products.block .columns-products-promo h3 {
+  margin: 0;
+  padding-bottom: 10px;
+  font-size: var(--heading-font-size-l);
+  line-height: 30px;
+}
+
+.columns-products .columns-products-promo > p {
+  margin: 0;
+  font-size: var(--body-font-size-m);
+  line-height: 24px;
+}
+
+.columns-products .columns-products-promo picture {
+  display: contents;
+}
+
+.columns-products .columns-products-promo img {
+  display: block;
+  box-sizing: border-box;
+  width: 75%;
+  height: auto;
+  margin-inline: auto;
+  padding-top: var(--space-m);
+  aspect-ratio: 275 / 176;
+  object-fit: cover;
+}
+
+/* the whole card is the link; its text stays for assistive tech only */
+.columns-products .columns-products-promo > p:has(> .columns-products-promo-link) {
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.columns-products .columns-products-promo-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.columns-products .columns-products-promo-linked:hover,
+.columns-products .columns-products-promo-linked:focus-within {
+  outline: 4px solid var(--color-dark);
+  border-radius: var(--radius-s);
+}
+
+.columns-products.block .columns-products-promo-linked:is(:hover, :focus-within) h3 {
+  color: #800080;
+}
+
+@media (width >= 900px) {
+  /* equal halves regardless of the promo's padding (source: 526 + 24 + 526) */
+  .columns-products > div {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-l);
+  }
+
+  .columns-products .columns-products-promo {
+    padding: var(--space-m);
+  }
+}

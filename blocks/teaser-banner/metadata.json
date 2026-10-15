@@ -1,0 +1,31 @@
+{
+  "variantName": "teaser-banner",
+  "baseBlock": "teaser",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "white-on-grey",
+    "density": "compact",
+    "purpose": "alert-banner",
+    "imagePattern": "icon",
+    "structure": "icon + title + text + CTA"
+  },
+  "contentPattern": {
+    "structure": "1 row, 3 cells: [shield icon image] | [bold title paragraph, description paragraph] | [CTA link 'Explore our resources']",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "usage": {
+    "pagesUsing": [
+      {
+        "url": "https://www.frostbank.com/",
+        "screenshot": "migration-work/screenshot.png"
+      }
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-01T01:11:52.037Z"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "teaser-banner"
+  ]
+}

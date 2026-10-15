@@ -1,0 +1,124 @@
+/* Teaser (banner) – horizontal callout bar: icon | title + text | CTA. Mobile-first.
+ * Values from source computed styles (migration-work/teaser-banner-extracted.css).
+ * Source breakpoints map to EDS ones: source < 768 -> base, 768–1024 -> 900, > 1024 -> 1200. */
+
+.teaser-banner {
+  padding: 24px 16px;
+  background-color: light-dark(var(--frost-sand), var(--color-deep));
+  color: var(--color-text);
+  text-align: center;
+}
+
+/* row: 12-column flex row with 24px gutters (12px per cell side) */
+.teaser-banner > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.teaser-banner > div > div {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  width: 100%;
+  padding: 0 12px;
+}
+
+.teaser-banner > div > .teaser-banner-icon {
+  width: calc(100% / 6);
+}
+
+.teaser-banner > div > .teaser-banner-body {
+  width: calc(100% * 2 / 3);
+  text-align: start;
+}
+
+/* icon (and CTA wrapper paragraphs) */
+.teaser-banner :is(.teaser-banner-icon, .teaser-banner-action) p {
+  margin: 0;
+}
+
+.teaser-banner .teaser-banner-icon picture {
+  display: block;
+}
+
+.teaser-banner .teaser-banner-icon :is(img, .icon) {
+  display: block;
+  width: 40px;
+  max-width: 70px;
+  height: auto;
+  margin-inline: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+/* dark theme: the source icon is a black line drawing, so flip it to stay visible */
+:where(.dark-scheme, body.dark, body.theme-dark) .teaser-banner .teaser-banner-icon img {
+  filter: invert(1);
+}
+
+/* title + description */
+.teaser-banner .teaser-banner-body > * {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-text);
+}
+
+.teaser-banner .teaser-banner-body > p:first-child {
+  margin-bottom: -5px;
+  font-family: var(--heading-font-family);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 27px;
+}
+
+.teaser-banner .teaser-banner-body > p:first-child strong {
+  font-weight: inherit;
+}
+
+/* CTA: full-width button in its column */
+main .teaser-banner .teaser-banner-action a.button:any-link {
+  width: 100%;
+  min-width: 0;
+  margin: 12px 0 10px;
+  padding: 16px;
+  white-space: normal;
+}
+
+@media (width >= 900px) {
+  .teaser-banner > div > .teaser-banner-icon {
+    width: calc(100% / 12);
+  }
+
+  .teaser-banner > div > .teaser-banner-body {
+    width: calc(100% * 7 / 12);
+  }
+
+  .teaser-banner > div > .teaser-banner-action {
+    width: calc(100% / 3);
+  }
+
+  main .teaser-banner .teaser-banner-action a.button:any-link {
+    margin: 12px 0 0;
+  }
+}
+
+@media (width >= 1200px) {
+  .teaser-banner {
+    padding: 24px 25px;
+  }
+
+  .teaser-banner .teaser-banner-icon :is(img, .icon) {
+    width: 70%;
+  }
+
+  .teaser-banner .teaser-banner-body > p:first-child {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  main .teaser-banner .teaser-banner-action a.button:any-link {
+    margin: 0;
+  }
+}
